@@ -37,14 +37,21 @@
 # The function should return how many times that letter occurs in the vector
 # Hint: use a filter!
   
-  CountOccurances <- function
+  CountOccurances <- function(letter, letters.vector) {
+    return(length(letters.vector[letters.vector == letter]))
+  }
 
 
 # Call your CountOccurances() function to see how many times the letter 'e' is in your sentence.
+  CountOccurances("e", sentence)
 
 
 # Use `sapply()` to apply your CountOccurances() function to each unique letter in the vector to determine its frequency!
 # Convert the result into a list (using `as.list`).
+  
+  freq <- as.list(sapply(unique.letters, CountOccurances, vector.of.letters))
 
 
 # Print the resulting list of frequencies
+  
+  print(freq)
